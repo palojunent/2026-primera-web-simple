@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paloma Juñent - Portafolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+            padding: 80px 0;
+            margin-bottom: 40px;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            margin: 0 auto;
+        }
+        .card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-body {
+            padding: 30px;
+        }
+        .social-icon {
+            font-size: 40px;
+            transition: transform 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+        }
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+        .instagram:hover { color: #e1306c; }
+        .github:hover { color: #333; }
+        .email-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .email-link:hover {
+            color: #764ba2;
+        }
+        .section-title {
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .star-rating {
+            font-size: 2rem;
+            color: #ddd;
+            cursor: pointer;
+        }
+        .star-rating .bi-star-fill {
+            color: #ffc107;
+        }
+        .review-card {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .review-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+        .review-item:last-child {
+            border-bottom: none;
+        }
+        .service-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 18px;
+            width: 2px;
+            height: calc(100% + 5px);
+            background: #ddd;
+        }
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        .badge-custom {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-person-circle me-2"></i>Paloma Juñent
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre-mi">Sobre Mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#formacion">Formación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#capacitacion">Capacitación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#redes">Redes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resenas">Reseñas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section text-center text-white">
+        <div class="container">
+            <div class="profile-img mb-4">
+                <i class="bi bi-person"></i>
+            </div>
+            <h1 class="display-4 fw-bold">Paloma Juñent</h1>
+            <p class="lead">Desarrolladora Web & Diseñadora</p>
+        </div>
+    </div>
+
+    <div class="container pb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10 mb-4">
+                <div class="card" id="sobre-mi">
+                    <div class="card-body text-center">
+                        <i class="bi bi-person-vcard section-title fs-1 d-block mb-3"></i>
+                        <h2 class="section-title">Sobre Mí</h2>
+                        <p class="lead mb-3" id="descripcionDisplay"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-10 mb-4">
+                <div class="card" id="servicios">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <i class="bi bi-briefcase section-title fs-1 d-block mb-3"></i>
+                            <h2 class="section-title">Servicios</h2>
+                        </div>
+                        <div class="row text-center" id="serviciosContainer"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-10 mb-4">
+                <div class="card" id="formacion">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <i class="bi bi-mortarboard section-title fs-1 d-block mb-3"></i>
+                            <h2 class="section-title">Formación Académica</h2>
+                        </div>
+                        <div class="timeline" id="formacionContainer"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-10 mb-4">
+                <div class="card" id="capacitacion">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <i class="bi bi-book section-title fs-1 d-block mb-3"></i>
+                            <h2 class="section-title">Capacitación</h2>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 justify-content-center" id="badgesContainer"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card" id="contacto">
+                    <div class="card-body text-center">
+                        <i class="bi bi-envelope section-title fs-1 d-block mb-3"></i>
+                        <h2 class="section-title">Contacto</h2>
+                        
+                        <div class="mb-3">
+                            <p class="mb-2 fw-semibold">Email:</p>
+                            <a href="mailto:p.junet@alumno.etec.um.edu.ar" class="email-link fs-5">
+                                <i class="bi bi-envelope-fill me-2"></i>p.junet@alumno.etec.um.edu.ar
+                            </a>
+                        </div>
+
+                        <div class="mb-3">
+                            <p class="mb-2 fw-semibold">Teléfono:</p>
+                            <a href="tel:+5491234567890" class="email-link fs-5">
+                                <i class="bi bi-telephone-fill me-2"></i><span id="telefonoDisplay">Agregar teléfono</span>
+                            </a>
+                        </div>
+
+                        <div class="mb-3">
+                            <p class="mb-2 fw-semibold">Google:</p>
+                            <a href="#" class="email-link fs-5" id="gmailLink">
+                                <i class="bi bi-google me-2"></i><span id="gmailDisplay">Agregar Gmail</span>
+                            </a>
+                        </div>
+
+                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#contactoModal">
+                            <i class="bi bi-pencil me-2"></i>Actualizar datos
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8 mb-4">
+                <div class="card" id="redes">
+                    <div class="card-body text-center">
+                        <i class="bi bi-people section-title fs-1 d-block mb-3"></i>
+                        <h2 class="section-title">Redes Sociales</h2>
+                        <p class="mb-4">Conectemos en mis redes sociales:</p>
+                        <div class="d-flex justify-content-center flex-wrap gap-4">
+                            <a href="https://instagram.com/palojunent" target="_blank" class="social-icon instagram" title="Instagram">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="https://github.com/palojunent" target="_blank" class="social-icon github" title="GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-10">
+                <div class="card" id="resenas">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <i class="bi bi-star section-title fs-1 d-block mb-3"></i>
+                            <h2 class="section-title">Reseñas</h2>
+                            <p class="mb-4">Deja tu opinión y calificación:</p>
+                        </div>
+
+                        <form id="reviewForm" class="mb-4">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Tu nombre:</label>
+                                <input type="text" class="form-control" id="reviewerName" placeholder="Ingresa tu nombre" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Tu email (opcional):</label>
+                                <input type="email" class="form-control" id="reviewerEmail" placeholder="tu@email.com">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Tu reseña:</label>
+                                <textarea class="form-control" id="reviewText" rows="3" placeholder="Escribe tu experiencia..." required></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Puntuación:</label>
+                                <div class="star-rating" id="starRating">
+                                    <i class="bi bi-star" data-value="1"></i>
+                                    <i class="bi bi-star" data-value="2"></i>
+                                    <i class="bi bi-star" data-value="3"></i>
+                                    <i class="bi bi-star" data-value="4"></i>
+                                    <i class="bi bi-star" data-value="5"></i>
+                                </div>
+                                <input type="hidden" id="ratingValue" value="0">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100">
+                                <i class="bi bi-send me-2"></i>Enviar Reseña
+                            </button>
+                        </form>
+
+                        <hr>
+
+                        <h5 class="mt-4 mb-3"><i class="bi bi-chat-square-text me-2"></i>Reseñas recientes:</h5>
+                        <div class="review-card" id="reviewsList">
+                            <div class="text-center text-muted py-3" id="noReviews">
+                                <p>No hay reseñas aún. ¡Sé el primero en dejar una!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="contactoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Actualizar datos de contacto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Teléfono:</label>
+                        <input type="tel" class="form-control" id="inputTelefono" placeholder="+54 9 11 1234 5678">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Gmail:</label>
+                        <input type="email" class="form-control" id="inputGmail" placeholder="tu@gmail.com">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="guardarContacto()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Paloma Juñent. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const descripcionDefault = "Soy una desarrolladora web y diseñadora apasionada por crear experiencias digitales únicas. Me especializo en construir sitios web modernos, responsivos y fáciles de usar. Mi objetivo es ayudar a empresas y particulares a transformar sus ideas en presencia digital profesional.";
+
+        const serviciosDefault = [
+            { titulo: 'Desarrollo Web', desc: 'Creación de sitios y aplicaciones web modernas utilizando HTML, CSS, JavaScript y frameworks actuales. Interfaces limpias, funcionales y optimizadas para SEO.', icono: 'code-slash' },
+            { titulo: 'Diseño UI/UX', desc: 'Diseño de interfaces de usuario atractivas y experiencias de usuario intuitivas. Prototipado, wireframing y diseño visual centrado en el usuario.', icono: 'palette' },
+            { titulo: 'Diseño Responsive', desc: 'Desarrollo de sitios web adaptativos que se ven perfecto en cualquier dispositivo: escritorio, tablet y móvil.', icono: 'phone' },
+            { titulo: 'Mantenimiento Web', desc: 'Actualizaciones, mejoras y soporte técnico para tu sitio web existente. Aseguramos que tu presencia digital siempre esté actualizada.', icono: 'gear' },
+            { titulo: 'Tiendas Online', desc: 'Creación de comercio electrónico con pasarelas de pago integradas. Gestiona tu tienda virtual de forma sencilla y efectiva.', icono: 'cart' }
+        ];
+
+        const formacionDefault = [
+            { titulo: 'Técnica en Programación', inst: 'Escuela Técnica Universidad de Mendoza', periodo: '2020 - 2024' },
+            { titulo: 'Ingeniería en Sistemas', inst: 'Universidad de Mendoza', periodo: '2024 - Presente' }
+        ];
+
+        const capacitacionDefault = [
+            'HTML5 & CSS3 Fundamentals',
+            'JavaScript Moderno (ES6+)',
+            'Bootstrap 5 - Framework CSS',
+            'Git y GitHub',
+            'Figma - Diseño UI/UX',
+            'React.js Básico',
+            'WordPress Development',
+            'Responsive Web Design',
+            'Python para Principiantes',
+            'UX Research Fundamentals'
+        ];
+
+        function renderServicios() {
+            document.getElementById('serviciosContainer').innerHTML = serviciosDefault.map(s => `
+                <div class="col-md-4 mb-3">
+                    <i class="bi bi-${s.icono} service-icon d-block"></i>
+                    <h5>${s.titulo}</h5>
+                    <p class="text-muted">${s.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        function renderFormacion() {
+            document.getElementById('formacionContainer').innerHTML = formacionDefault.map(f => `
+                <div class="timeline-item">
+                    <h5>${f.titulo}</h5>
+                    <p class="text-muted mb-1">${f.inst}</p>
+                    <small class="text-muted">${f.periodo}</small>
+                </div>
+            `).join('');
+        }
+
+        function renderCapacitacion() {
+            document.getElementById('badgesContainer').innerHTML = capacitacionDefault.map(c => `<span class="badge-custom">${c}</span>`).join('');
+        }
+
+        let selectedRating = 0;
+
+        document.querySelectorAll('.star-rating .bi-star').forEach(star => {
+            star.addEventListener('click', function() {
+                selectedRating = this.getAttribute('data-value');
+                document.getElementById('ratingValue').value = selectedRating;
+                updateStars(selectedRating);
+            });
+        });
+
+        function updateStars(value) {
+            document.querySelectorAll('.star-rating .bi-star').forEach((star, index) => {
+                if (index < value) {
+                    star.classList.remove('bi-star');
+                    star.classList.add('bi-star-fill');
+                } else {
+                    star.classList.remove('bi-star-fill');
+                    star.classList.add('bi-star');
+                }
+            });
+        }
+
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (selectedRating === 0) {
+                alert('Por favor selecciona una puntuación');
+                return;
+            }
+
+            const name = document.getElementById('reviewerName').value;
+            const email = document.getElementById('reviewerEmail').value;
+            const text = document.getElementById('reviewText').value;
+            const rating = selectedRating;
+
+            const review = { name, email, text, rating, date: new Date().toLocaleDateString('es-AR') };
+
+            let reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
+            reviews.unshift(review);
+            localStorage.setItem('reviews', JSON.stringify(reviews));
+
+            renderReviews();
+            
+            document.getElementById('reviewForm').reset();
+            selectedRating = 0;
+            updateStars(0);
+        });
+
+        function renderReviews() {
+            const reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
+            const container = document.getElementById('reviewsList');
+            
+            if (reviews.length === 0) {
+                container.innerHTML = '<div class="text-center text-muted py-3"><p>No hay reseñas aún. ¡Sé el primero en dejar una!</p></div>';
+                return;
+            }
+
+            container.innerHTML = reviews.map(review => `
+                <div class="review-item">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <strong>${review.name}</strong>
+                        <div>
+                            ${'<i class="bi bi-star-fill text-warning"></i>'.repeat(review.rating)}
+                            ${'<i class="bi bi-star text-muted"></i>'.repeat(5 - review.rating)}
+                        </div>
+                    </div>
+                    <p class="mb-1">${review.text}</p>
+                    <small class="text-muted">${review.date}</small>
+                </div>
+            `).join('');
+        }
+
+        function guardarContacto() {
+            const telefono = document.getElementById('inputTelefono').value;
+            const gmail = document.getElementById('inputGmail').value;
+
+            if (telefono) {
+                document.getElementById('telefonoDisplay').textContent = telefono;
+                document.querySelector('a[href^="tel:"]').href = 'tel:' + telefono.replace(/\s/g, '');
+            }
+
+            if (gmail) {
+                document.getElementById('gmailDisplay').textContent = gmail;
+                document.getElementById('gmailLink').href = 'mailto:' + gmail;
+            }
+
+            localStorage.setItem('contacto', JSON.stringify({ telefono, gmail }));
+            bootstrap.Modal.getInstance(document.getElementById('contactoModal')).hide();
+        }
+
+        window.addEventListener('load', function() {
+            document.getElementById('descripcionDisplay').textContent = descripcionDefault;
+            
+            renderServicios();
+            renderFormacion();
+            renderCapacitacion();
+            renderReviews();
+
+            const savedContact = JSON.parse(localStorage.getItem('contacto') || 'null');
+            if (savedContact) {
+                if (savedContact.telefono) {
+                    document.getElementById('telefonoDisplay').textContent = savedContact.telefono;
+                    document.querySelector('a[href^="tel:"]').href = 'tel:' + savedContact.telefono.replace(/\s/g, '');
+                }
+                if (savedContact.gmail) {
+                    document.getElementById('gmailDisplay').textContent = savedContact.gmail;
+                    document.getElementById('gmailLink').href = 'mailto:' + savedContact.gmail;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
